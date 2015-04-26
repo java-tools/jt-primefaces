@@ -1,89 +1,67 @@
----
-layout: default
-title: Unofficial PrimeFaces
-prettify: true
----
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>JSF Programming Tools - PrimeFaces by jsftools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">JSF Programming Tools - PrimeFaces</h1>
+      <h2 class="project-tagline">Unofficial releases of PrimeFaces</h2>
+      <a href="https://github.com/jsftools/jpt-primefaces" class="btn">View on GitHub</a>
+      <a href="https://github.com/jsftools/jpt-primefaces/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/jsftools/jpt-primefaces/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-<a class="visible-desktop" href="https://github.com/unofaces/unofficial-primefaces">
-  <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 1040;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
-</a>
+    <section class="main-content">
+      <h1>
+<a id="primefaces-unofficial" class="anchor" href="#primefaces-unofficial" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://unofaces.github.io/unofficial-primefaces/">PrimeFaces Unofficial</a>
+</h1>
 
-<h3>Why?</h3>
+<p><a href="https://buildhive.cloudbees.com/job/primefaces/job/primefaces/"><img src="https://buildhive.cloudbees.com/job/primefaces/job/primefaces/badge/icon" alt="Build Status"></a></p>
+
+<p>Unofficial Mirror of PrimeFaces JSF Components</p>
+
+<h2>
+<a id="why" class="anchor" href="#why" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why?</h2>
 
 <p>The <a href="http://blog.primefaces.org/?p=2443">New Maintanance Policy</a> doesn't have freely available releases starting with PrimeFaces 3.5.</p>
 
-<div class="alert alert-success">
-  This work initiative aims to provide freely available repositories with the result of an integration effort of each change from
-  <a href="https://code.google.com/p/primefaces/source/list">original <em>open source</em> repository</a>.
-  All sources came from the original repository under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.
-  The <strong>sources from this work</strong> are all hosted in <a href="https://github.com/primefaces/primefaces">GitHub</a>.
-  <strong>Fork it!</strong>
-</div>
+<p>This work initiative aims to provide freely available repositories with the result of an integration effort of each change from <a href="https://code.google.com/p/primefaces/source/list">original open source repository</a>. All sources came from the original repository under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.</p>
 
-<div class="alert alert-danger">
-  <strong>Need support?</strong> See the <a href="http://www.primefaces.org/support.html">official support page</a>.
-  The releases distributed here are not officially supported. Use at your own risk, according to the respective clauses in
-  <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.
-</div>
+<h2>
+<a id="maven-repository" class="anchor" href="#maven-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maven Repository</h2>
 
-<h3>Unofficial Releases</h3>
+<p>Downloading unofficial releases with Maven:</p>
 
-<p>Unofficial Maven Repository for unofficial releases based in the changes from
-<a href="https://code.google.com/p/primefaces/source/list">original <em>open source</em> repository</a>.</p>
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">repository</span>&gt;
+  &lt;<span class="pl-ent">id</span>&gt;unofaces-repo&lt;/<span class="pl-ent">id</span>&gt;
+  &lt;<span class="pl-ent">name</span>&gt;Unofficial PrimeFaces Maven Repository&lt;/<span class="pl-ent">name</span>&gt;
+  &lt;<span class="pl-ent">url</span>&gt;http://unofaces.github.io/repository&lt;/<span class="pl-ent">url</span>&gt;
+  &lt;<span class="pl-ent">layout</span>&gt;default&lt;/<span class="pl-ent">layout</span>&gt;
+&lt;/<span class="pl-ent">repository</span>&gt;</pre></div>
 
-<table id="unofficial-releases" class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>Version</th>
-      <th>Base</th>
-      <th>Resources</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for release in site.releases.unofficials %}
-      {% capture full_version %}{{ release.version }}-{{ release.suffix }}{% endcapture %}
-    <tr>
-      <td>{{ release.version }}-{{ release.suffix }}</td>
-      <td><a href="{{ site.browse_source }}/primefaces/trunk?r={{ release.revision }}" title="{{ release.date_time | date_to_rfc822 }}">r{{ release.revision }}</a></td>
-      <td>
-        <a href="{{ site.repo_url }}/org/primefaces/primefaces/{{ full_version }}/primefaces-{{ full_version }}.jar">Binary</a>
-        <a href="{{ site.repo_url }}/org/primefaces/primefaces/{{ full_version }}/primefaces-{{ full_version }}-sources.jar">Sources</a>
-      </td>
-      <td><a href="{{ site.baseurl }}/changelog/{{ release.version }}.html">ChangeLog</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<h2>
+<a id="building-artifacts" class="anchor" href="#building-artifacts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building Artifacts</h2>
 
-<p>Downloading <strong>unofficial</strong> releases with Maven:</p>
+<blockquote>
+<p>mvn clean install -Prelease -Dgpg.skip=true</p>
+</blockquote>
 
-<pre class="prettyprint lang-xml">
-&lt;repository&gt;
-  &lt;id&gt;unofaces-repo&lt;/id&gt;
-  &lt;name&gt;Unofficial PrimeFaces Maven Repository&lt;/name&gt;
-  &lt;url&gt;http://unofaces.github.io/repository&lt;/url&gt;
-  &lt;layout&gt;default&lt;/layout&gt;
-&lt;/repository&gt;
-</pre>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/jsftools/jpt-primefaces">JSF Programming Tools - PrimeFaces</a> is maintained by <a href="https://github.com/jsftools">jsftools</a>.</span>
 
-<h3>Warnings</h3>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
-<div class="alert alert-danger">
-  This unofficial repository <b>does not contain</b> artifacts for <b>themes</b>. Therefore, keep the official repository in your POM.
-</div>
+    </section>
 
-<div class="alert alert-danger">
-  In the <strong>3.5.9-UR</strong> and <strong>3.5.10-UR</strong> releases the feature <a href="{{ site.issue_tracker }}5850">5850</a> ended up coming down from upstream version.
-  See the <a href="{{ site.baseurl }}/widgetvar-workaround.html">workaround</a> if you are using one of them.
-</div>
-
-<div class="alert alert-danger">
-  From <strong>3.5.8-UR</strong> to <strong>3.5.13-UR</strong> releases, there is one bug in <code>AjaxBehaviour.saveState</code>.
-  From the <strong>3.5.13-UR2</strong> release on, the bug was fixed.
-</div>
-
-<h3>Latest Official Releases</h3>
-
-<p>Please go to the <a href="http://www.primefaces.org">Official Site</a> for download official releases.</p>
+  
+  </body>
+</html>
 
