@@ -2411,6 +2411,13 @@ PrimeFaces.widget.DataTable = PrimeFaces.widget.DeferredWidget.extend({
                     draggedCells.each(function(i, item) {
                         $(this).insertAfter(droppedCells.eq(i));
                     });
+
+                    //sync clone
+                    if($this.cfg.scrollable) {
+                        var draggedColumnClone = $(document.getElementById(draggedColumn.attr('id') + '_clone')),
+                        droppedColumnClone = $(document.getElementById(droppedColumn.attr('id') + '_clone'));
+                        draggedColumnClone.insertBefore(droppedColumnClone);
+                    }
                 }
                 //drop left
                 else {
