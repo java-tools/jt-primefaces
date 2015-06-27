@@ -2419,12 +2419,13 @@ PrimeFaces.widget.DataTable = PrimeFaces.widget.DeferredWidget.extend({
                     draggedCells.each(function(i, item) {
                         $(this).insertBefore(droppedCells.eq(i));
                     });
-                }
-                
-                //align widths
-                if($this.cfg.scrollable) {
-                    $this.columnWidthsFixed = false;
-                    $this.fixColumnWidths();
+
+                    //sync clone
+                    if($this.cfg.scrollable) {
+                        var draggedColumnClone = $(document.getElementById(draggedColumn.attr('id') + '_clone')),
+                        droppedColumnClone = $(document.getElementById(droppedColumn.attr('id') + '_clone'));
+                        draggedColumnClone.insertBefore(droppedColumnClone);
+                    }
                 }
                
                 //save order
